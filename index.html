@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi pembuatan kartu </title>
+    <link rel="stylesheet" href="./dist/css/main.css">
+</head>
+
+<body id="test">
+    <div class="upload">
+        <img src="./dist/images/linkto.png" alt="" srcset="" width="60px">
+        <input type="file" id="fileUploader" name="fileUploader" accept=".xls, .xlsx"/>
+        <img src="./dist/images/linkto.png" alt="" srcset="" width="60px" style="transform: rotateY(180deg);">
+    </div>
+    </br></br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <table border="1" style="width: 100%;display: block; border:#000 2px;">
+                    <thead>
+                        <td> No </td>
+                        <td> Nomer Ujian </td>
+                        <td> Nama </td>
+                        <td> Tanggal Lahir </td>
+                        <td> Ruang </td>
+                    </thead>
+                    <tbody id="dataJson">
+                
+                    </tbody>
+                    <tfoot>
+                        Jumlah Total : <span id="lengthJSON"> 0 </span> siswa
+                    </tfoot>
+                </table>
+            </div>
+            <div class="col-2">
+
+                <div class="table">
+                    <table border="0">
+                        <tr style="text-transform: uppercase;">
+                            <th width="100" id="logo"></th>
+                            <th>
+                                <strong>
+                                    <p id="title"></p>
+                                    <p id="subtitle"></p>
+                                </strong>
+                                <small id="alamat"></small>
+                            </th>
+                        </tr>
+                    </table>
+                    <hr>
+                    <div class="content">
+                        <p style="text-align: center;font-weight: bold;text-transform: uppercase;" id="cardname"></p>
+                        <div class="row-3">
+                            <div class="col-1">
+                                <p>Nomer Ujian</p>
+                                <p>Nama</p>
+                                <p>Tanggal Lahir</p>
+                                <p>Ruang</p>
+                            </div>
+                            <div class="col-2">
+                                <p>: </p>
+                                <p>: </p>
+                                <p>:</p>
+                                <p>: </p>
+
+                                <br>
+                                <div class="foot" style="text-align: center;">
+                                    <p>
+                                        <span id="date"></span>
+                                        <p id="ttd-title"></p>
+                                        <br><small>TTD.</small>
+                                        <p id="ttd-name"></p>
+                                        <p  id="ttd-nip"></p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div style="text-align: center; margin-bottom: 5px;">
+        <button role="button" id="btnPrint"> <strong>CETAK SEKARANG</strong></button>
+        <a href="template.xlsx" role="button" id="dwnTemplate"> <strong>Download Template</strong></a>
+    </div>
+
+    <div class="preview">
+        <div class="page" id="page">
+            <div class="row" id="resultPage">
+                
+            </div>
+
+            
+        </div>
+    </div>
+
+
+
+    <script src="./dist/js/jquery.js"> </script>
+    <script lang="javascript" src="./dist/js/xlsx.full.min.js"></script>
+    <script src="./dist/js/html2pdf.bundle.js"></script>
+    <script src="./dist/js/main.js"></script>
+</body>
+</html>
+
+
