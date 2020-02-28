@@ -2,6 +2,6 @@
 Hanya berisi kartu ujian
 Untuk menginstal
 
-git clone
+// git clone https://github.com/manaim2112/kartuUjianSekolah.git
 
 untuk membuka, klik index.html
