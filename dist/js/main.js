@@ -116,32 +116,35 @@ $(document).ready(function(){
   /**
    * Create .xlsx file with data template
    */
-  let tempXLSX = document.querySelector('#downloadtemplate');
-  tempXLSX.addEventListener('click', (event) => {
+  /**
+   * Create .xlsx file with data template
+   */
+  // let tempXLSX = document.querySelector('#downloadtemplate');
+  // tempXLSX.addEventListener('click', (event) => {
 
-    // Create workbook
-    let wb = XLSX.utils.book_new();
-    // Update properties
-    wb.Props = {
-      Title : "Aplikasi Kartu Ujian Sekolah",
-      Subject : "Vol.01",
-      Author : "@manaim2112",
-      CreatedDate : new Date(2020,12,21)
-    };
-    // SheetName
-    wb.SheetNames.push("Sheet 1");
-    // Content Data
-    let ws_data = [
-      ['hello', 'world']
-    ];
-    let ws = XLSX.utils.aoa_to_sheet(ws_data);
-    wb.Sheets["Test Sheet!"] = ws;
-    // download xlsx
-    let wbout = XLSX.write(wb, {
-      bookType : 'xlsx',
-      type : 'binary'
-    });
-  });
+  //   // Create workbook
+  //   let wb = XLSX.utils.book_new();
+  //   // Update properties
+  //   wb.Props = {
+  //     Title : "Aplikasi Kartu Ujian Sekolah",
+  //     Subject : "Vol.01",
+  //     Author : "@manaim2112",
+  //     CreatedDate : new Date(2020,12,21)
+  //   };
+  //   // SheetName
+  //   wb.SheetNames.push("Sheet 1");
+  //   // Content Data
+  //   let ws_data = [
+  //     ['hello', 'world']
+  //   ];
+  //   let ws = XLSX.utils.aoa_to_sheet(ws_data);
+  //   wb.Sheets["Test Sheet!"] = ws;
+  //   // download xlsx
+  //   let wbout = XLSX.write(wb, {
+  //     bookType : 'xlsx',
+  //     type : 'binary'
+  //   });
+  // });
 
   document.querySelector("#btnPrint").addEventListener('click', (event) => {
     // Get the element.
