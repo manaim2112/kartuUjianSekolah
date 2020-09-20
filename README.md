@@ -1,7 +1,18 @@
 # kartuUjianSekolah
-Hanya berisi kartu ujian
+##  Hanya berisi kartu ujian
 Untuk menginstal
+- Download semua  file disini
+- Buka file index.html
+- Selamat Mencoba
 
-// git clone https://github.com/manaim2112/kartuUjianSekolah.git
+Mengubah Data
+- Data terdapat pada data.js
+- Silahkan buka dengan notepad atau text editor sederhana
+- ganti bagian yang di inginkan
 
-untuk membuka, klik index.html
+Update
+- bug fix on save print
+- create template
+- minified
+
+
