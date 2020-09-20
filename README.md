@@ -1,18 +1,20 @@
-# kartuUjianSekolah
-##  Hanya berisi kartu ujian
-Untuk menginstal
+# kartu Ujian Sekolah
+##  Fitur untuk membantu kemudahan instansi membuat kartu ujian
+
+### Untuk menginstal
 - Download semua  file disini
-- Buka file index.html
+- Buka file [index.html](./index.html)
 - Selamat Mencoba
 
-Mengubah Data
-- Data terdapat pada data.js
-- Silahkan buka dengan notepad atau text editor sederhana
+### Customize
+- Data lembaga terdapat pada [data.js](data.js)
+- Silahkan buka dengan notepad atau text editor yang anda punya
 - ganti bagian yang di inginkan
 
-Update
+### Update
 - bug fix on save print
-- create template
+- create template live
+- no internet
 - minified
 
 
