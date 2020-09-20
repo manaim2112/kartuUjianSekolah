@@ -1,15 +1,22 @@
-*, body {
+body {
     margin:0;
     padding:0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 16px;
+    background-color: #f2f4f6;
+    color : #555;
 }
 
 .upload {
-    background-color: #0eae00;
-    padding : 20px;
+    background: #FFE000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #799F0C, #FFE000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #799F0C, #FFE000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    padding : 3rem;
     display: block;
     text-align: center;
+
+
 
 }
 .upload > input {
@@ -17,6 +24,12 @@
     padding : 10px;
     border-radius: 6px;
     color:#aaa;
+    height: 200px;
+    width: 400px;
+    
+    -webkit-box-shadow: 3px 6px 14px 0px rgb(150 150 150);
+-moz-box-shadow: 3px 6px 14px 0px rgb(150 150 150);
+box-shadow: 3px 6px 14px 0px rgb(150 150 150);
 }
 .content {
     width: 100%;
@@ -51,33 +64,30 @@
 .row-3 > .col-1 {
     grid-column: 1;
 }
+.row-3 p {
+    margin: 0;
+}
 .row-3 > .col-2 {
     grid-column: 2 / 4;
 }
 .table {
     box-shadow : 1px 1px 4px 1px #aaa;
     border:1px #000 solid;
-
+    width: 100%;
+}
+.table p {
+    margin: 0;
 }
 
-#btnPrint {
-    padding:12px;
-    border :0px;
-    border-radius: 5px;
-    background-color: #27b439;
-    color:#fff;
-}
-#btnPrint:hover {
-    background-color: #337a3d;
-}
-#btnPrint:active {
-    background-color:#65b36f ;
-}
 
 .preview {
-    background-color: #092806;
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     padding:20px;
     text-align: center;
+    font-size: 12px;
 }
 
 .preview > .page {
@@ -104,4 +114,27 @@
 }
 #dwnTemplate:active {
     background-color: #ddd;
+}
+
+@media print {
+    body * {
+        visibility: hidden; // part to hide at the time of print
+        -webkit-print-color-adjust: exact !important; // not necessary use         
+           if colors not visible
+    }
+
+    .upload, .container {
+        display: none;
+        visibility: hidden !important; // To hide 
+    }
+
+    .pageBreak {
+        clear: both;
+        page-break-after: always;
+    }
+    #resultPage * {
+        visibility: visible; // Print only required part
+        text-align: left;
+        -webkit-print-color-adjust: exact !important;
+    }
 }
