@@ -3,6 +3,18 @@ function html(Obj) {
     document.getElementById(a).innerHTML = Object.values(Obj)[b];
   });
 }
+localStorage.removeItem('ExcelData');
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  onOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
 
 let fileInput = document.getElementById("fileUploader"),
     dragFile = document.querySelector('.upload'),
@@ -10,6 +22,10 @@ let fileInput = document.getElementById("fileUploader"),
     createFile = document.getElementById('xlxsFile'),
     saveFile = document.getElementById('saveFile');
 function handleFile(e) {
+  Toast.fire({
+    icon: 'info',
+    title: 'Proses...'
+  });
   var files = e.target.files, f = files[0];
   var reader = new FileReader();
   reader.onload = function(e) {
@@ -155,22 +171,12 @@ function handleFile(e) {
       });
     });
 
-    const Toast = Swal.mixin({
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-      timer: 3000,
-      timerProgressBar: true,
-      onOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-      }
-    })
+    
     
     Toast.fire({
       icon: 'success',
       title: 'Import Berhasil'
-    })
+    });
     document.querySelector('.upload').style.display = 'none';
     document.querySelector('.container').style =  "position:fixed;";
   };
@@ -182,7 +188,13 @@ dragFile.addEventListener('drop', handleFile, false);
 previewData.addEventListener('click', (e) => {
   let data = JSON.parse(localStorage.getItem('ExcelData')),
       textContent = '';
-
+  if(data == null) {
+    return swal.fire({
+      title : "Oppss...",
+      text : "Data tidak ditemukan",
+      icon : 'error'
+    });
+  }
   data.forEach((value)=> {
     textContent += `
       <tr>
